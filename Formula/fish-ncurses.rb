@@ -26,7 +26,7 @@ class FishNcurses < Formula
       -DCMAKE_PREFIX_PATH=#{HOMEBREW_PREFIX}/Cellar/ncurses/#{ncurses_ver}
       -DSED=/usr/bin/sed
     ]
-    system "sed", '/CODESIGN_ON_MAC(${target})/ d', 'CMakeLists.txt'
+    system "sed", '-i', '-e', '/CODESIGN_ON_MAC(${target})/ d', 'CMakeLists.txt'
     system "cmake", ".", *std_cmake_args, *args
     system "make", "install"
   end
