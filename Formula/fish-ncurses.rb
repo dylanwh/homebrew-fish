@@ -18,7 +18,7 @@ class FishNcurses < Formula
   def install
     # In Homebrew's 'superenv' sed's path will be incompatible, so
     # the correct path is passed into configure here.
-    ncurses_ver = Dir.children("#{HOMEBREW_PREFIX}Cellar/ncurses").sort.last
+    ncurses_ver = Dir.children("#{HOMEBREW_PREFIX}/Cellar/ncurses").sort.last
     args = %W[
       -Dextra_functionsdir=#{HOMEBREW_PREFIX}/share/fish/vendor_functions.d
       -Dextra_completionsdir=#{HOMEBREW_PREFIX}/share/fish/vendor_completions.d
